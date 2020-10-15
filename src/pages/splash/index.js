@@ -1,6 +1,6 @@
 import React, {Component, useEffect} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-import {Logo} from '../../assets/icons';
+import {StyleSheet, View, Text, Image} from 'react-native';
+import {SplashLogo} from '../../assets';
 import {SIZES, FONTS, COLORS} from '../../constants';
 
 const SplashScreen = ({navigation}) => {
@@ -9,10 +9,18 @@ const SplashScreen = ({navigation}) => {
       navigation.replace('OnBoarding');
     }, 300);
   }, [navigation]);
+
   return (
     <View style={{flex: 1}}>
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Logo width={120} height={120} />
+        <Image
+          source={SplashLogo}
+          resizeMode="cover"
+          style={{
+            width: '100%',
+            height: '100%',
+          }}
+        />
       </View>
     </View>
   );

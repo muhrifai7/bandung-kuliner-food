@@ -88,12 +88,13 @@ const OnBoarding = ({navigation}) => {
               />
             </View>
             <View
-              style={{
-                position: 'absolute',
-                bottom: '13%',
-                left: 40,
-                right: 40,
-              }}>
+              style={
+                {
+                  // bottom: '13%',
+                  // left: 40,
+                  // right: 40,
+                }
+              }>
               <Text
                 style={{
                   ...FONTS.h1,
@@ -116,27 +117,19 @@ const OnBoarding = ({navigation}) => {
             {/* Button */}
             <TouchableOpacity
               style={{
-                position: 'absolute',
-                right: 0,
-                bottom: 0,
-                width: 150,
-                height: 60,
+                width: 100,
+                height: 50,
                 paddingLeft: 20,
                 justifyContent: 'center',
-                borderTopLeftRadius: 30,
-                borderBottomLeftRadius: 30,
-                borderBottomRightRadius: 0,
-                borderTopRightRadius: 0,
-                backgroundColor: COLORS.primary,
+                borderRadius: 10,
+                // backgroundColor: COLORS.primary,
               }}
               onPress={() => {
                 navigation.replace('Authentication', {
                   screen: 'Login',
                 });
               }}>
-              <Text style={{...FONTS.h1, color: COLORS.white}}>
-                {completed ? "Let's Go" : 'Skip'}
-              </Text>
+              <Text style={{...FONTS.h2, color: COLORS.black}}>Skip</Text>
             </TouchableOpacity>
           </View>
         ))}
@@ -193,16 +186,16 @@ const styles = StyleSheet.create({
     width: SIZES.width,
   },
   dotsRootContainer: {
-    position: 'absolute',
-    bottom: SIZES.height > 700 ? '20%' : '16%',
+    // position: 'absolute',
+    // bottom: SIZES.height > 700 ? '20%' : '16%',
   },
   dotsContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: SIZES.padding / 2,
-    marginBottom: SIZES.padding * 3,
-    height: SIZES.padding,
+    // marginTop: SIZES.padding / 2,
+    // marginBottom: SIZES.padding * 3,
+    // height: SIZES.padding,
   },
   dot: {
     borderRadius: SIZES.radius,

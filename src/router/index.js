@@ -28,9 +28,9 @@ const MainApp = () => {
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
       }}>
-      <Tab.Screen name="Discover" component={HomeScreen} />
-      <Tab.Screen name="Courses" component={Courses} />
-      <Tab.Screen name="Messages" component={Messages} />
+      <Tab.Screen name="Beranda" component={HomeScreen} />
+      <Tab.Screen name="Cari" component={Courses} />
+      <Tab.Screen name="Pesanan" component={Messages} />
       {/* <Tab.Screen name="Notifications" component={Notifications} /> */}
       <Tab.Screen name="Profiles" component={Profiles} />
     </Tab.Navigator>

@@ -14,19 +14,18 @@ import Gap from '../Gap';
 import Button from '../Button';
 import {getArticle} from '../../redux/ducks/action';
 
-const Article = ({data}) => {
+const BestSelling = ({data}) => {
   const [article, setArticle] = useState([]);
   const dispatch = useDispatch();
   const articleData = useSelector(
     (state) => state.articleStore.data,
     shallowEqual,
   );
-  console.log(articleData, 'articleData');
-  useEffect(() => {
-    dispatch(getArticle());
-    fetchData();
-    return () => {};
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getArticle());
+  //   fetchData();
+  //   return () => {};
+  // }, []);
 
   const fetchData = async () => {
     try {
@@ -38,25 +37,18 @@ const Article = ({data}) => {
 
   const Item = ({title, id}) => (
     <View style={styles.container}>
-      {/* <Image
+      <View>
+        <Image
           style={styles.imageBrand}
           source={{
-            uri: url,
+            uri:
+              'https://static.turbosquid.com/Preview/2016/07/04__14_12_56/1.png1099343B-CB1E-4859-808F-C8AB319102C6Large.jpg',
           }}
-        /> */}
-      <View style={styles.content}>
-        <Text style={styles.title}>{title}</Text>
-
-        <View style={styles.share}>
-          <Text>98</Text>
-          <Text>12 Comment</Text>
-        </View>
-        <Gap height={10} />
-        <View style={styles.share}>
-          <Text>Like</Text>
-          <Text>Comment</Text>
-          <Text>Share</Text>
-        </View>
+        />
+      </View>
+      <View>
+        <Text>test</Text>
+        <Text>test</Text>
       </View>
     </View>
   );
@@ -67,7 +59,20 @@ const Article = ({data}) => {
     <View>
       <SafeAreaView>
         <FlatList
-          data={article}
+          data={[
+            {
+              completed: false,
+              id: 168,
+              title: 'recusandae quia qui sunt libero',
+              userId: 9,
+            },
+            {
+              completed: true,
+              id: 169,
+              title: 'ea odio perferendis officiis',
+              userId: 9,
+            },
+          ]}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
         />
@@ -76,7 +81,7 @@ const Article = ({data}) => {
   );
 };
 
-export default Article;
+export default BestSelling;
 
 const styles = StyleSheet.create({
   container: {
@@ -92,10 +97,14 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
     paddingBottom: 20,
-    marginVertical: 20,
+    marginVertical: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   imageBrand: {
     height: 120,
+    width: 120,
   },
   content: {
     justifyContent: 'center',

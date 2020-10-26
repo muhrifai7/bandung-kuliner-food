@@ -7,7 +7,7 @@ const Home = () => {
     try {
       const optionConect = {
         clientKey: 'SB-Mid-client-Qn-opZodkJstvvC8',
-        urlMerchant: 'https://merchant-url-sandbox.com//',
+        urlMerchant: '"http://192.168.1.8/siakadPayment/public/snap/charge/"',
       };
 
       const transRequest = {
@@ -62,7 +62,7 @@ const Home = () => {
         callback,
       );
     } catch (error) {
-      console.log(error);
+      console.log(error, 'eeerrrro');
     }
   };
 

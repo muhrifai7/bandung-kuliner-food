@@ -175,7 +175,7 @@ const Login = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      {/* <StatusBar backgroundColor="#009387" barStyle="light-content" /> */}
+      <StatusBar backgroundColor={COLORS.primary} barStyle="light-content" />
       <View style={styles.header}>
         <Text style={styles.text_header}>Wellcome!</Text>
       </View>
@@ -312,13 +312,13 @@ const Login = ({navigation}) => {
                     </Text>
                   </TouchableOpacity>
                 </View>
-                <GoogleSigninButton
+                {/* <GoogleSigninButton
                   style={{height: 48}}
                   size={GoogleSigninButton.Size.Wide}
                   color={GoogleSigninButton.Color.Dark}
                   onPress={_signIn}
                   disabled={loading}
-                />
+                /> */}
               </View>
             )}
           </Formik>

@@ -10,12 +10,14 @@ import {
   User,
   UserActive,
 } from '../../assets';
+import Icon from 'react-native-vector-icons/AntDesign';
+import {COLORS} from '../../constants';
 
 const TabItem = ({onPress, onLongPress, options, isFocused, label}) => {
   const Icon = () => {
-    if (label === 'Discover') return <HomeActive width={20} height={20} />;
-    if (label === 'Messages') return <MessageActive width={20} height={20} />;
-    if (label === 'Courses') return <CourseActive width={20} height={20} />;
+    if (label === 'Beranda') return <HomeActive width={20} height={20} />;
+    if (label === 'Cari') return <CourseActive width={20} height={20} />;
+    if (label === 'Pesanan') return <MessageActive width={20} height={20} />;
     if (label === 'Profiles') return <UserActive width={20} height={20} />;
   };
   return (
@@ -28,9 +30,7 @@ const TabItem = ({onPress, onLongPress, options, isFocused, label}) => {
       onPress={onPress}
       onLongPress={onLongPress}>
       <Icon />
-      <Text style={{color: isFocused ? '#673ab7' : '#222'}}>
-        {!isFocused && label}
-      </Text>
+      <Text style={{color: isFocused ? COLORS.primary : 'black'}}>{label}</Text>
     </TouchableOpacity>
   );
 };
